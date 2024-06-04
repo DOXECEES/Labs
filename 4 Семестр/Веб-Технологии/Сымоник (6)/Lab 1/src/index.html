@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <header>
+        &nbsp;
+    </header>
+
+    <main>
+        <form action="#" method="post" autocomplete="on">
+            <div class="head">
+                <h1>Регистрация на портале для трудоустройства</h1>
+                <h4><span>*Обязательно</span></h4>
+            </div>
+
+            <div class="standartInput">
+                <label for="login" class="headerLabel">Введите логин<span>*</span></label>
+                <input type="text" id="login" name="login" placeholder="Ваш логин" pattern="^[\w]{4,24}$"
+                    autocomplete="on" required>
+            </div>
+            <div class="standartInput">
+                <label for="pass" class="headerLabel">Введите пароль<span>*</span></label>
+                <input type="password" id="pass" name="pass" placeholder="Ваш пароль" pattern="^[\w._]{6,}$" required>
+            </div>
+            <div class="standartInput">
+                <label for="email" class="headerLabel">Введите email<span>*</span></label>
+                <input type="email" id="email" name="email" placeholder="Email"
+                    pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$" required>
+            </div>
+
+            <div class="birthDate">
+                <div>
+                    <label for="date" class="headerLabel">Введите вашу дату рождения<span>*</span></label>
+                    <input type="date" id="date" name="date" value="2000-01-01" min="1900-01-01" max="2007-01-01"
+                        required />
+                </div>
+                <div>
+                    <label for="tentacles" class="headerLabel">Ваш стаж<span>*</span></label>
+                    <input type="number" id="tentacles" value="0" name="tentacles" min="0" max="60" />
+                </div>
+            </div>
+
+            <div class="radios">
+                <label for="sex" class="headerLabel">Ваш пол<span>*</span></label>
+                <div class="radio">
+                    <input type="radio" id="man" name="sex" value="0" required />
+                    <label for="man">Мужской</label>
+                </div>
+                <div class="radio">
+                    <input type="radio" id="women" name="sex" value="1" />
+                    <label for="women">Женский</label>
+                </div>
+            </div>
+
+            <div class="cheakboxes">
+                <label class="headerLabel">Выберите сферу деятельности</label>
+                <div class="cheakbox">
+                    <input id="dev" type="checkbox" value="1">
+                    <label for="dev">Разработка</label>
+                </div>
+                <div class="cheakbox">
+                    <input id="testing" type="checkbox" value="2">
+                    <label for="testing">Тестирование</label>
+                </div>
+                <div class="cheakbox">
+                    <input id="admin" type="checkbox" value="3">
+                    <label for="admin">Администрирование</label>
+                </div>
+                <div class="cheakbox">
+                    <input id="design" type="checkbox" value="4">
+                    <label for="design">Дизайн</label>
+                </div>
+                <div class="cheakbox">
+                    <input id="market" type="checkbox" value="5">
+                    <label for="market">Маркетинг</label>
+                </div>
+            </div>
+
+            <div class="select">
+                <label for="education" class="headerLabel">Ваше образование:</label>
+                <select id="education" name="education">
+                    <option value="medium">Среднее</option>
+                    <option value="prof">Профессионально-техническое</option>
+                    <option value="medium-spec">Среднее специальное</option>
+                    <option value="high">Высшее</option>
+                </select>
+            </div>
+
+            <div class="avatar">
+                <label for="avatar">Загрузите фото</label>
+                <input type="file" id="avatar" name="avatar" accept="image/png" />
+            </div>
+
+            <label for="message" class="headerLabel">Раскажите о себе</label>
+            <textarea id="message" name="message" rows="4" placeholder="О себе(150 символов)"
+                maxlength="150"></textarea>
+
+            <div class="submit">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </main>
+
+    <footer>
+        This content's nethet created nоt endorsed by Google. Report Abuse • Terms of Servtce • Terms
+        <span id="footerSpan">
+            Forms
+        </span>
+    </footer>
+</body>
+
+</html>

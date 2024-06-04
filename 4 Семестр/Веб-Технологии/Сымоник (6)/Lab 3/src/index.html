@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+
+
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+        }
+
+        h1 {
+            margin: 10px;
+        }
+
+        textarea {
+            max-width: 100%;
+            max-height: 100%;
+            resize: vertical;
+        }
+
+        label,
+        input,
+        textarea {
+
+            margin-bottom: 8px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .task {
+            border: 2px solid black;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            background-color: whitesmoke;
+
+        }
+
+        .containers_for_elements {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="task">
+        <label>
+            <h1>Задание 1</h1>
+        </label>
+        <div class="containers_for_elements">
+            <button id="task1_button" type="button" onclick="compareNumbers()">Выполнить</button>
+        </div>
+    </form>
+    <form class="task">
+        <label>
+            <h1>Задание 2</h1>
+        </label>
+        <div class="containers_for_elements">
+            <label for="floors">Количество этажей</label>
+            <input type="number" name="floors" id="floors" placeholder="Введите количество этажей (1-20):" required />
+            <label for="entrances">Количество подъездов</label>
+            <input type="number" name="entrances" id="entrances" placeholder="Введите число подъездов (1-15):"
+                required />
+            <label for="flatsPerFloor">Количество квартир на этаже</label>
+            <input type="number" name="flatsPerFloor" id="flatsPerFloor"
+                placeholder="Введите количество квартир на лестничной площадке (1-5):" required />
+            <label for="flat">Номер квартиры</label>
+            <input type="number" name="flat" id="flat" placeholder="Введите номер квартиры" required />
+            <button type="button" onclick="task2()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+        <label>
+            <h1>Задание 3</h1>
+        </label>
+        <div class="containers_for_elements">
+            <label for="month">Месяц:</label>
+            <input type="number" name="month" id="month" placeholder="Введите номер месяца (1-12):" required />
+            <label for="day">День:</label>
+            <input type="number" name="day" id="day" placeholder="Введите число в этом месяце (1-31):" required />
+            <button id="task1_button" type="button" onclick="task3()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 4</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="num1">Первое число</label>
+            <input type="number" name="num1" id="num1" placeholder="Введите первое число" required />
+            <label for="num2">Второе число</label>
+            <input type="number" name="num2" id="num2" placeholder="Введите второе число" required />
+            <button id="task4_button" type="button" onclick="task4()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 5</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="sum">Введите числа для суммирования:</label>
+            <input type="number" name="sum" id="sum" placeholder="Введите число" required />
+            <p>Результат: <span id="sum-result">0</span></p>
+            <button id="task5_button" type="button" onclick="task5()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 6</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="start">Начальное число:</label>
+            <input type="number" name="start" id="start" placeholder="Введите начальное число" required />
+            <label for="end">Конечное число:</label>
+            <input type="number" name="end" id="end" placeholder="Введите конечное число" required />
+            <label for="step">Шаг:</label>
+            <input type="number" name="step" id="step" placeholder="Введите шаг" required />
+            <button id="task6_  button" type="button" onclick="task6()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 7</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="sum">Введите числа для суммирования:</label>
+            <label for="rows">Cтроки:</label>
+            <input type="number" name="rows" id="rows" placeholder="Введите количество строк" required />
+            <label for="columns">Столбцы:</label>
+            <input type="number" name="columns" id="columns" placeholder="Введите количество столбцов" required />
+
+            <button id="task7_button" type="button" onclick="task7()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 8</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="arrays">Введите массивы для объединения: (Пример: [[1,2],[3,4]])</label>
+            <textarea name="arrays" id="arrays" placeholder="Введите массивы" rows="10" required></textarea>
+
+            <button id="task8_button" type="button" onclick="task8()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 9</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="arrays_2">Введите массивы: (Пример: [1, [2], [[5], [3,
+                [4]]]])</label>
+            <textarea name="arrays_2" id="arrays_2" placeholder="Введите массивы" rows="10" required></textarea>
+
+            <button id="task9_button" type="button" onclick="task9()">Выполнить</button>
+        </div>
+    </form>
+
+    <form class="task">
+
+        <label>
+            <h1>Задание 10</h1>
+        </label>
+        <div class="containers_for_elements">
+
+            <label for="arrays_2">Введите строку: </label>
+            <textarea name="str" id="str" placeholder="Введите строку" rows="10" required></textarea>
+            <label for="repeats">Количество повторений:</label>
+            <input type="number" name="repeats" id="repeats" placeholder="Введите количество повторений" required />
+
+            <button id="task10_button" type="button" onclick="task10()">Выполнить</button>
+        </div>
+    </form>
+
+    <!--task 1-->
+    <script>
+        function compareNumbers() {
+            let firstNumber;
+            let secondNumber;
+
+            while (true) {
+                firstNumber = prompt("Введите первое число:");
+                if (firstNumber.toLowerCase() === 'q')
+                    break;
+                secondNumber = prompt("Введите второе число:");
+
+                let message;
+
+
+                if (secondNumber.toLowerCase() === 'q')
+                    break;
+
+                if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                    message = "Один или оба ввода – не числа.";
+                    alert(message);
+                    break;
+                }
+
+                const firstNumberInt = parseInt(firstNumber);
+                const secondNumberInt = parseInt(secondNumber);
+
+
+                if (firstNumberInt === secondNumberInt) {
+                    message = "числа равны";
+                } else if (firstNumberInt < secondNumberInt) {
+                    message = "первое число меньше";
+                } else {
+                    message = "второе число меньше";
+                }
+
+                alert(message);
+            }
+        }
+    </script>
+    <!--task 2-->
+    <script>
+        function getFloorAndEntrance(floors, entrances, flatsPerFloor, flat) {
+            if (typeof floors !== 'number' || floors < 1 || floors > 20) {
+                throw new Error('Количество этажей должно быть числом от 1 до 20.');
+            }
+
+            if (typeof entrances !== 'number' || entrances < 1 || entrances > 15) {
+                throw new Error('Число подъездов должно быть числом от 1 до 15.');
+            }
+
+            if (typeof flatsPerFloor !== 'number' || flatsPerFloor < 1 || flatsPerFloor > 5) {
+                throw new Error('Количество квартир на лестничной площадке должно быть числом от 1 до 5.');
+            }
+
+            if (typeof flat !== 'number' || flat < 1) {
+                throw new Error('Номер квартиры должен быть числом больше 0.');
+            }
+
+            const entrance = Math.ceil(flat / (flatsPerFloor * floors));
+            if (entrance < 1 || entrance > entrances)
+                throw new Error('Квартиры не существует');
+
+            return entrance;
+        }
+        function task2() {
+            try {
+                const floors = Number(document.getElementById('floors').value);
+                const entrances = Number(document.getElementById('entrances').value);
+                const flatsPerFloor = Number(document.getElementById('flatsPerFloor').value);
+                const flat = Number(document.getElementById('flat').value);
+
+                const entrance = getFloorAndEntrance(floors, entrances, flatsPerFloor, flat);
+                alert(`Номер подъезда: ${entrance}`);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+    <!--task 3-->
+    <script>
+        function getWeekDay(month, day) {
+            const daysInMonths = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+            if (month < 1 || month > 12) {
+                throw new Error('Номер месяца должен быть числом от 1 до 12.');
+            }
+
+            if (day < 1 || day > daysInMonths[month - 1]) {
+                throw new Error(`В ${month}-м месяце нет ${day}-го дня.`);
+            }
+
+            const date = new Date(2022, month - 1, day);
+            const weekDay = date.toLocaleString('ru', { weekday: 'long' });
+            return weekDay;
+        }
+        function task3() {
+            try {
+                const month = Number(document.getElementById('month').value);
+                const day = Number(document.getElementById('day').value);
+
+                const weekDay = getWeekDay(month, day);
+                alert(`День недели: ${weekDay}`);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+    <!--task 4-->
+    <script>
+        function calculate(num1, num2) {
+            const isNum1Even = num1 % 2 === 0;
+            const isNum2Even = num2 % 2 === 0;
+
+            if (isNum1Even && isNum2Even) {
+                return num1 * num2;
+            }
+            else if (!isNum1Even && !isNum2Even) {
+                return num1 + num2;
+            }
+            else {
+                if (isNum1Even === true) {
+                    return num2;
+                }
+                else {
+                    return num1;
+                }
+            }
+        }
+
+        function task4() {
+            try {
+                const num1 = Number(document.getElementById('num1').value);
+                const num2 = Number(document.getElementById('num2').value);
+
+                const result = calculate(num1, num2);
+                alert(`Результат: ${result}`);
+            } catch (error) {
+                alert(error.message);
+            }
+        }
+    </script>
+    <!-- task 5-->
+    <script>
+        function sum(a) {
+
+            let currentSum = a;
+
+            function f(b) {
+                currentSum += b;
+                return f;
+            }
+
+            f.toString = function () {
+                return currentSum;
+            };
+
+            return f;
+        }
+        const sum1 = sum(0);
+        function task5() {
+
+            const sumResult = document.getElementById('sum-result');
+            const inputElement = document.getElementById("sum");
+            const res = sum1(Number(inputElement.value));
+            sumResult.innerHTML = res;
+
+        }
+    </script>
+    <!-- task 6-->
+    <script>
+        function range(start, end, step = 1) {
+            const rangeArray = [];
+            if (step > 0) {
+                for (let i = start; i <= end; i += step) {
+                    rangeArray.push(i);
+                }
+            } else {
+                for (let i = start; i >= end; i += step) {
+                    rangeArray.push(i);
+                }
+            }
+            return rangeArray;
+        }
+        function task6() {
+            const start = Number(document.getElementById('start').value);
+            const end = Number(document.getElementById('end').value);
+            const step = Number(document.getElementById('step').value);
+
+            const result = range(start, end, step);
+            alert(result);
+        }
+    </script>
+
+    <script>
+        function createMatrix(rows, cols) {
+            const matrix = [];
+            for (let i = 0; i < rows; i++) {
+                matrix.push([]);
+                for (let j = 0; j < cols; j++) {
+                    matrix[i].push(Math.floor(Math.random() * 101));
+                }
+            }
+            return matrix;
+        }
+
+        function printMatrix(matrix) {
+            for (let i = 0; i < matrix.length; i++) {
+                console.log(matrix[i].join(' '));
+            }
+        }
+
+        function sumMatrices(matrix1, matrix2) {
+            const sumMatrix = [];
+            for (let i = 0; i < matrix1.length; i++) {
+                sumMatrix.push([]);
+                for (let j = 0; j < matrix1[i].length; j++) {
+                    sumMatrix[i].push(matrix1[i][j] + matrix2[i][j]);
+                }
+            }
+            return sumMatrix;
+        }
+
+        function formString(matrix, rows) {
+            let string = "";
+            for (let i = 0; i < matrix.length; i++) {
+                if (i % rows)
+                    string += '\n'
+                string += matrix[i]
+            }
+            return string;
+        }
+
+        function task7() {
+
+            const rows = Number(document.getElementById('rows').value);
+            const columns = Number(document.getElementById('columns').value);
+            const matrix1 = createMatrix(rows, columns);
+            printMatrix(matrix1);
+            alert(formString(matrix1, rows));
+
+            const matrix2 = createMatrix(rows, columns);
+            alert(formString(matrix2, rows));
+
+            const sumMatrix = sumMatrices(matrix1, matrix2);
+            alert(formString(sumMatrix, rows));
+        }
+    </script>
+    <script>
+        function parse_8() {
+
+            const inputElement = document.getElementById("arrays");
+
+            const res = JSON.parse(inputElement.value);
+            console.log(res);
+
+            return res;
+        }
+
+        function myUnionFunc(arrays) {
+            let newArr = new Array();
+
+            arrays.forEach(element => {
+                element.forEach((item) => {
+                    newArr.push(item);
+                })
+            });
+            if (newArr.some(Array.isArray)) {
+                throw ('Фунция работает только с одномерными массивами. Размер массива ' + newArr.flat(Infinity).length);
+                return;
+            }
+
+            return [...new Set(newArr)];
+        }
+        function task8() {
+            try {
+                alert(myUnionFunc(parse_8()));
+            } catch (error) {
+                alert('Неверный формат ввода');
+                alert(error);
+
+            }
+        }
+    </script>
+
+    <!-- task 9-->
+    <script>
+
+        function parse() {
+
+            const inputElement = document.getElementById("arrays_2");
+
+            const res = JSON.parse(inputElement.value);
+            console.log(res);
+
+            return res;
+        }
+        const MyArrayFlattenFunc = (arr) => {
+            let result = [];
+
+            arr.forEach((element) => {
+                if (Array.isArray(element)) {
+                    result = result.concat(MyArrayFlattenFunc(element));
+                } else {
+                    result.push(element);
+                }
+            });
+            result.sort();
+            return result;
+        };
+        function task9(arr) {
+            try {
+                alert(MyArrayFlattenFunc(parse()));
+
+            }
+            catch (error) {
+                alert('Неверный ввод');
+            }
+        }
+
+    </script>
+
+    <!-- task 10 -->
+    <script>
+        function MyFunctionUnique(input, repeats) {
+            const map = new Map();
+
+            const uniqueValues = [];
+
+            for (let i = 0; i < input.length; i++) {
+                map.set(input[i], (map.get(input[i]) ?? 0) + 1);
+            }
+
+            for (let [key, value] of map.entries()) {
+                console.log(key + " = " + value)
+                if (value < repeats)
+                    uniqueValues.push(key);
+            }
+
+            uniqueValues.sort();
+            return uniqueValues;
+        }
+        function task10() {
+            try {
+                const str = document.getElementById("str").value;
+                const repeats = document.getElementById("repeats").value
+                alert(MyFunctionUnique(str, repeats));
+            }
+            catch (error) {
+                alert(error)
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

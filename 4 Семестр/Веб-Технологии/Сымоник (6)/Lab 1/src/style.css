@@ -1,0 +1,184 @@
+body {
+    background: #eee8f6;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #673bb7;
+    padding: 100px;
+    text-align: center;
+    color: white;
+    flex: 0 0 auto;
+}
+
+footer {
+    background-color: #eee8f6;
+    padding: 30px;
+    text-align: center;
+    color: white;
+    flex: 0 0 auto;
+    color: black;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+    margin-top: -70px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    border-top: 15px solid #b585fc;
+    padding: 15px;
+    padding-left: 35px;
+    padding-right: 35px;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    font-size: larger;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: none;
+    border-bottom: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    font-size: 16px;
+    outline: none;
+
+}
+
+form textarea {
+    min-width: 600px;
+    min-height: 50px;
+    max-height: 500px;
+
+}
+
+form input:valid {
+    border-color: #45a049;
+}
+
+form input:invalid {
+    border-color: red;
+}
+
+form input:focus {
+    background-color: #c8cacc;
+}
+
+form textarea {
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.standartInput {
+    width: 50%;
+}
+
+form button {
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+form button:hover {
+    background-color: #5f96ef;
+}
+
+div {
+    padding-bottom: 25px;
+}
+
+span {
+    color: red;
+}
+
+.cheakboxes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cheakbox {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+
+}
+
+.cheakbox label {
+    flex: 1;
+    margin-left: 15px;
+}
+
+
+.select select {
+    border: 0px;
+    outline: 0px;
+    width: 100%;
+}
+
+.radios {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.radio {
+    display: flex;
+    align-items: center;
+    padding-bottom: 10px;
+
+}
+
+.radio label {
+    flex: 1;
+    margin-left: 15px;
+}
+
+.headerLabel {
+    margin-bottom: 20px;
+}
+
+.submit button {
+    margin-top: 50px;
+    width: 20%;
+    background-color: #4385f1;
+}
+
+.birthDate {
+    display: flex;
+    margin-right: 100px;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+form input[type="file"] {
+    border: none;
+}
+
+#footerSpan {
+    font-size: xx-large;
+    color: black;
+    padding-top: 20px;
+}
